@@ -65,7 +65,7 @@ const bloglistCardTitleStyle = `font-bold text-2xl mb-3`;
 const bloglistCardCategoryStyle = `inline-block bg-activation text-primary md:text-sm font-medium mb-3 px-3 py-1.5 rounded-lg transition duration-200 ease-in-out hover:bg-blue-400 hover:text-white`;
 const bloglistCardDescriptionStyle = `text-graylv4 text-base font-normal leading-snug h-16 line-clamp-3 mb-3`;
 const bloglistCardAuthorDivStyle = `inline-block`;
-const bloglistCardAuthorImgStyle = `inline w-8 h-8 rounded-full object-cover object-center mr-2 border border-graylv2 overflow-hidden`;
+const bloglistCardAuthorImgStyle = `inline w-6 h-6 object-cover object-center mr-2 overflow-hidden`;
 const bloglistCardAuthorStyle = `inline text-sm font-semibold text-black mr-2`;
 const bloglistCardDateStyle = `text-graylv3 text-sm inline-block font-normal`;
 
