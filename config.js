@@ -16,7 +16,7 @@ const users = [
     username: "이민녁",
     company: "",
     position: "",
-    img: "img/user/icon-fox.png",
+    img: "img/icon/icon-fox.png",
   },
 ];
 
