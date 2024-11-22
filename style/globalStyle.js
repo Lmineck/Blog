@@ -21,7 +21,7 @@ const postolStyle = `list-decimal list-inside text-lg font-normal tracking-wide 
 const postliStyle = `pl-4 mb-1 leading-relaxed tracking-wide text-justify`;
 
 const postblockquoteStyle = `border-l-4 border-primary pl-4`;
-const postpreStyle = `relative bg-graylv1 p-4 rounded-[10px] mb-6 text-base font-medium overflow-auto whitespace-pre-wrap break-words text-justify max-w-full h-auto align-middle`;
+const postpreStyle = `relative bg-graylv1 p-4 rounded-[10px] mb-6 text-base font-medium overflow-auto whitespace-pre-wrap break-words text-justify max-w-full h-auto align-middle leading-relaxed`;
 const postcodeStyle = `font-mono text-lg bg-transparent`;
 
 const posttableStyle = `table-auto w-auto border-collapse mb-6 h-auto align-middle border-graylv2 text-left`;
