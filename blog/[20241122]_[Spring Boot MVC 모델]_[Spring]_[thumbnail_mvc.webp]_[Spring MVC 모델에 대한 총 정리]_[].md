@@ -167,7 +167,6 @@ public class ProductController {
    - DispatcherServlet은 `HandlerMapping`을 사용하여 요청 URL과 매핑된 Controller를 검색합니다.
    - `HandlerMapping`은 요청 URL 패턴(`@GetMapping`, `@RequestMapping`)과 Controller 메서드의 매핑 정보를 관리합니다.
 
-   예:
    ```java
    @RestController
    @RequestMapping("/products")
@@ -184,7 +183,6 @@ public class ProductController {
    - `HandlerMapping`이 적절한 Controller를 찾은 뒤, `HandlerAdapter`가 해당 Handler(Controller)를 호출합니다.
    - 이 과정에서 요청 파라미터(예: `?id=123`)를 적절한 형태로 바인딩하고, 필요한 데이터를 준비합니다.
 
-   예:
    ```java
    @GetMapping("/{id}")
    public Product getProductById(@PathVariable Long id) {
@@ -197,7 +195,6 @@ public class ProductController {
    - Controller는 Service 계층을 호출하여 비즈니스 로직을 처리합니다.
    - Service는 데이터를 검색하거나 처리한 후 결과를 반환합니다.
 
-   예:
    ```java
    @Service
    public class ProductService {
@@ -213,7 +210,7 @@ public class ProductController {
 ### 5. ModelAndView 또는 Model 반환
    - Controller가 처리 결과를 Model에 담거나, REST 응답(JSON, XML)을 반환합니다.
 
-   HTML View 예:
+   - HTML View
    ```java
    @GetMapping("/welcome")
    public String welcome(Model model) {
@@ -223,7 +220,7 @@ public class ProductController {
    ```
    - `Model` 객체는 데이터를 View로 전달하며, `welcome.html` View 파일이 선택됩니다.
 
-   REST API 예:
+   - REST API
    ```java
    @GetMapping("/{id}")
    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
@@ -236,7 +233,6 @@ public class ProductController {
    - HTML View의 경우, `ViewResolver`가 View 이름(예: `welcome`)을 실제 파일 경로로 매핑합니다.
    - Spring Boot는 기본적으로 Thymeleaf를 사용하며, 설정된 디렉터리에서 View를 찾습니다.
 
-   예:
    ```properties
    spring.thymeleaf.prefix=classpath:/templates/
    spring.thymeleaf.suffix=.html
@@ -248,12 +244,12 @@ public class ProductController {
    - View는 `Model` 데이터를 활용하여 클라이언트에게 표시할 최종 HTML을 생성합니다.
    - REST 응답의 경우, `HttpMessageConverter`가 데이터를 JSON 또는 XML로 변환하여 반환합니다.
 
-   HTML 렌더링 예:
+   - HTML
    ```html
    <h1 th:text="${message}">Placeholder</h1>
    ```
 
-   JSON 응답 예:
+   - JSON
    ```json
    {
        "id": 1,
@@ -355,7 +351,7 @@ Spring Boot MVC는 개발자가 신속하게 웹 애플리케이션을 구축할
 
 #### (1) 자동 설정
 - 대부분의 설정을 자동으로 처리하므로, 초기 개발에 필요한 설정 부담이 줄어듭니다.
-- 예: DispatcherServlet, ViewResolver 등이 자동 구성됩니다.
+- DispatcherServlet, ViewResolver 등이 자동 구성됩니다.
 
 #### (2) 빠른 시작
 - `Spring Initializr`와 같은 도구를 통해 프로젝트를 몇 분 안에 시작 가능.
@@ -367,7 +363,6 @@ Spring Boot MVC는 개발자가 신속하게 웹 애플리케이션을 구축할
 
 #### (4) 최소한의 코드로 기본 기능 제공
 - RESTful API를 간단하게 개발 가능.
-- 예:
   ```java
   @RestController
   public class HelloController {
@@ -389,7 +384,7 @@ Spring Boot MVC는 모듈화된 설계와 표준화된 구조를 통해 유지�
 
 #### (2) 표준화된 프로젝트 구조
 - Spring Boot는 표준 프로젝트 디렉터리 구조를 권장하여 일관된 코드베이스를 유지.
-- 디렉터리 예:
+- 디렉터리
   ```
   src/main/java/com/example/mvcapp/
   ├── controller/
@@ -401,7 +396,7 @@ Spring Boot MVC는 모듈화된 설계와 표준화된 구조를 통해 유지�
 
 #### (3) 테스트 지원
 - Spring Boot MVC는 단위 테스트와 통합 테스트를 쉽게 작성할 수 있는 도구를 제공합니다.
-- 예: `MockMvc`를 사용한 Controller 테스트:
+- `MockMvc`를 사용한 Controller 테스트
   ```java
   @Test
   public void testHelloEndpoint() throws Exception {
@@ -418,7 +413,7 @@ Spring Boot MVC는 애플리케이션의 요구사항이 증가해도 쉽게 확
 
 #### (1) 모듈화된 Spring 생태계와 통합
 - Spring Security, Spring Data, Spring Batch 등과 쉽게 통합 가능.
-- 예: Spring Security를 사용한 인증/인가 추가:
+- Spring Security를 사용한 인증/인가 추가
   ```java
   @Configuration
   public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -434,7 +429,7 @@ Spring Boot MVC는 애플리케이션의 요구사항이 증가해도 쉽게 확
 
 #### (2) 커스터마이징 가능
 - 기본적으로 제공되는 설정을 커스터마이징하여 애플리케이션의 요구사항에 맞게 조정 가능.
-- 예: JSON 변환기(Jackson) 커스터마이징:
+- JSON 변환기(Jackson) 커스터마이징
   ```java
   @Bean
   public ObjectMapper objectMapper() {
@@ -453,7 +448,7 @@ Spring Boot MVC는 다양한 요구사항과 기술 스택을 지원하여 유�
 
 #### (1) 다중 View 지원
 - HTML, JSON, XML, PDF, Excel 등 다양한 View를 생성 가능.
-- 예: JSON 응답:
+- JSON
   ```java
   @GetMapping("/json")
   public ResponseEntity<Map<String, String>> getJson() {
@@ -465,14 +460,14 @@ Spring Boot MVC는 다양한 요구사항과 기술 스택을 지원하여 유�
 
 #### (2) 템플릿 엔진 선택 가능
 - Thymeleaf, JSP, FreeMarker, Mustache 등 다양한 템플릿 엔진을 지원.
-- 예: Thymeleaf를 사용하는 경우:
+- Thymeleaf를 사용하는 경우
   ```html
   <h1 th:text="${message}">Placeholder</h1>
   ```
 
 #### (3) RESTful API 및 웹 소켓 지원
 - Spring Boot MVC는 RESTful API와 WebSocket을 모두 쉽게 구현할 수 있습니다.
-- RESTful 예제:
+- RESTful
   ```java
   @RestController
   @RequestMapping("/api")
@@ -506,7 +501,7 @@ Spring Boot MVC는 기본적으로 성능에 최적화된 설정을 제공하며
 
 #### (2) 비동기 요청 처리
 - 비동기 컨트롤러를 쉽게 구현 가능.
-- 예: 비동기 요청 처리:
+- 비동기 요청 처리
   ```java
   @GetMapping("/async")
   public CompletableFuture<String> asyncEndpoint() {
@@ -521,11 +516,10 @@ Spring Boot MVC는 성숙한 프레임워크로, 안정적인 운영 환경을 �
 
 #### (1) 로깅 및 모니터링
 - 기본적으로 Spring Boot Actuator를 제공하여 애플리케이션 상태를 모니터링.
-- 예: `/actuator/health` 엔드포인트로 애플리케이션 상태 확인.
+- `/actuator/health` 엔드포인트로 애플리케이션 상태 확인.
 
 #### (2) 에러 핸들링
 - 글로벌 예외 처리 기능 제공.
-- 예:
   ```java
   @ControllerAdvice
   public class GlobalExceptionHandler {
