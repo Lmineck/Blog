@@ -7,7 +7,7 @@ const mobileMenuStyle = `m-0 block py-4 px-6`;
 // blog style과 notebook style
 const posth1Style = `text-3xl font-bold mb-4 mt-6 border-b border-graylv2 pb-2.5`;
 const posth2Style = `text-2xl font-bold mb-4 mt-6 border-b border-graylv2 pb-2.5`;
-const posth3Style = `text-xl font-bold mb-4 mt-6 border-b border-graylv2 pb-2.5`;
+const posth3Style = `text-xl font-bold mb-4 mt-6 pb-2.5`;
 const posth4Style = `text-lg font-bold mb-2 mt-4`;
 const posth5Style = `text-base font-bold mb-2 mt-4`;
 const posth6Style = `text-sm font-bold mb-2 mt-4`;
