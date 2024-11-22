@@ -10,7 +10,7 @@ Spring Boot MVC는 웹 애플리케이션을 **Model**, **View**, **Controller**
 
 ## Model, View, Controller
 
-### **1. Model (모델)**
+### 1. Model (모델)
 
 #### **역할**
 - **비즈니스 로직**과 **데이터 처리**를 담당
