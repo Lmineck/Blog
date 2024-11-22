@@ -606,13 +606,13 @@ public class HomeController {
 
 ## 4. Spring Boot MVC의 동작 흐름
 
-1. HTTP 요청 수신
+### 1. HTTP 요청 수신
    - 클라이언트(웹 브라우저, REST 클라이언트 등)가 HTTP 요청(예: `GET /products`)을 보냅니다.
    - 이 요청은 DispatcherServlet이 수신합니다. Spring Boot는 기본적으로 모든 요청을 `DispatcherServlet`에 매핑(`/*`)합니다.
 
 <br />
 
-2. HandlerMapping을 통해 적절한 Handler(Controller) 찾기
+### 2. HandlerMapping을 통해 적절한 Handler(Controller) 찾기
    - DispatcherServlet은 `HandlerMapping`을 사용하여 요청 URL과 매핑된 Controller를 검색합니다.
    - `HandlerMapping`은 요청 URL 패턴(`@GetMapping`, `@RequestMapping`)과 Controller 메서드의 매핑 정보를 관리합니다.
 
@@ -631,7 +631,7 @@ public class HomeController {
 
 <br />
 
-3. HandlerAdapter가 Controller 호출
+### 3. HandlerAdapter가 Controller 호출
    - `HandlerMapping`이 적절한 Controller를 찾은 뒤, `HandlerAdapter`가 해당 Handler(Controller)를 호출합니다.
    - 이 과정에서 요청 파라미터(예: `?id=123`)를 적절한 형태로 바인딩하고, 필요한 데이터를 준비합니다.
 
@@ -646,7 +646,7 @@ public class HomeController {
 
 <br />
 
-4. Controller에서 비즈니스 로직 실행
+### 4. Controller에서 비즈니스 로직 실행
    - Controller는 Service 계층을 호출하여 비즈니스 로직을 처리합니다.
    - Service는 데이터를 검색하거나 처리한 후 결과를 반환합니다.
 
@@ -665,7 +665,7 @@ public class HomeController {
 
 <br />
 
-5. ModelAndView 또는 Model 반환
+### 5. ModelAndView 또는 Model 반환
    - Controller가 처리 결과를 Model에 담거나, REST 응답(JSON, XML)을 반환합니다.
 
    HTML View 예:
@@ -689,7 +689,7 @@ public class HomeController {
 
 <br />
 
-6. ViewResolver를 통해 View 선택
+### 6. ViewResolver를 통해 View 선택
    - HTML View의 경우, `ViewResolver`가 View 이름(예: `welcome`)을 실제 파일 경로로 매핑합니다.
    - Spring Boot는 기본적으로 Thymeleaf를 사용하며, 설정된 디렉터리에서 View를 찾습니다.
 
@@ -703,7 +703,7 @@ public class HomeController {
 
 <br />
 
-7. View 렌더링 및 응답 생성
+### 7. View 렌더링 및 응답 생성
    - View는 `Model` 데이터를 활용하여 클라이언트에게 표시할 최종 HTML을 생성합니다.
    - REST 응답의 경우, `HttpMessageConverter`가 데이터를 JSON 또는 XML로 변환하여 반환합니다.
 
@@ -723,10 +723,12 @@ public class HomeController {
 
 <br />
 
-8. 클라이언트로 응답 반환
+### 8. 클라이언트로 응답 반환
    - View에서 생성된 HTML, JSON, XML 등이 HTTP 응답으로 클라이언트에 전달됩니다.
    - 클라이언트는 받은 데이터를 화면에 출력하거나 후속 작업을 진행합니다.
 
+<br />
+<br />
 <br />
 
 ### Spring Boot MVC 동작 흐름 예제
