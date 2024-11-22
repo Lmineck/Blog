@@ -4,14 +4,6 @@ const menuListStyle = `md:ml-10 text-base leading-snug text-surface hover:text-g
 // mobile menu style
 const mobileMenuStyle = `m-0 block py-4 px-6`;
 
-// blog style과 notebook style
-const posth1Style = `text-4xl font-bold mt-4 border-b border-graylv2 pb-2.5`;
-const posth2Style = `text-3xl font-bold mt-4 border-b border-graylv2 pb-2.5`;
-const posth3Style = `text-2xl font-bold mt-4 pb-2.5`;
-const posth4Style = `text-xl font-bold mt-4`;
-const posth5Style = `text-lg font-bold mt-2`;
-const posth6Style = `text-base font-bold2 mt-2`;
-
 const postpStyle = `text-lg my-6 font-normal tracking-wide text-justify`;
 const postimgStyle = `border-4 border-graylv1 rounded my-10 mx-auto block max-w-full h-auto align-middle`;
 const postaStyle = `text-lg text-primary underline hover:bg-activation transition duration-200`;
