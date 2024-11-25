@@ -44,7 +44,7 @@ TRUNC(date, [date_format])
 ```sql
 SELECT TRUNC(123.456) AS TRUNCATED_NUMBER FROM DUAL;
 ```
-**결과**:  
+**결과**:
 ```
 TRUNCATED_NUMBER
 ----------------
@@ -55,7 +55,7 @@ TRUNCATED_NUMBER
 ```sql
 SELECT TRUNC(123.456, 2) AS TRUNCATED_NUMBER FROM DUAL;
 ```
-**결과**:  
+**결과**:
 ```
 TRUNCATED_NUMBER
 ----------------
@@ -66,7 +66,7 @@ TRUNCATED_NUMBER
 ```sql
 SELECT TRUNC(1234.56, -2) AS TRUNCATED_NUMBER FROM DUAL;
 ```
-**결과**:  
+**결과**:
 - `-2`는 정수부에서 두 자리 잘라냄.
 ```
 TRUNCATED_NUMBER
